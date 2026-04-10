@@ -79,6 +79,6 @@ class Sale extends Model
     // cast created_at a time human for example : hace 1 hora, hace 2 horas, hace 1 día, etc
     public function getCreatedAtHumansAttribute(): string
     {
-        return $this->created_at->diffForHumans();
+        return !$this->created_at ? '' : $this->created_at->diffForHumans();
     }
 }
