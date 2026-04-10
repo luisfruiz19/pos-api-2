@@ -22,12 +22,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
         # Llamamos a los seeders específicos
-        $this->call([
-            CategorySeeder::class,
-            ProductSeeder::class,
-            CustomerSeeder::class,
-            CreditSaleSeeder::class,
-            CreditPaymentSeeder::class,
-        ]);
+        // $this->call([
+        //     CategorySeeder::class,
+        //     ProductSeeder::class,
+        //     CustomerSeeder::class,
+        //     CreditSaleSeeder::class,
+        //     CreditPaymentSeeder::class,
+        // ]);
     }
 }
