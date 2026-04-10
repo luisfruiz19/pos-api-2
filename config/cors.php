@@ -19,12 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [
-        'http://localhost:3000',
-        'http://localhost:5173',
-        '*.trycloudflare.com',  // Permite cualquier tunnel de Cloudflare
-        '*.caen.edu.pe',      // Permite cualquier subdominio de caen.edu.pe
-    ],
+    'allowed_origins' => explode(',', env('CORS_ALLOWED_ORIGINS', 'http://localhost:5173')),
 
     'allowed_origins_patterns' => [],
 
