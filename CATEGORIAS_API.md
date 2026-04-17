@@ -18,11 +18,9 @@
 ```
 GET    /api/categories                    - Listar categorías (con filtros y paginación)
 POST   /api/categories                    - Crear categoría
-GET    /api/categories/stats              - Estadísticas de categorías
 GET    /api/categories/{category}         - Obtener categoría
 PUT    /api/categories/{category}         - Actualizar categoría
 DELETE /api/categories/{category}         - Eliminar categoría
-GET    /api/categories/{category}/products - Obtener productos de una categoría
 ```
 
 ### 4. Datos de Prueba
@@ -61,36 +59,6 @@ Content-Type: application/json
 GET /api/categories?order_by=nombre&per_page=10&activos_only=true
 ```
 
-### Obtener Productos de una Categoría
-```bash
-GET /api/categories/{category_id}/products?per_page=15&activos_only=true
-```
-
-### Crear Producto con Categoría
-```bash
-POST /api/products
-Content-Type: application/json
-
-{
-  "nombre": "Agua 500ml",
-  "category_id": "{category_uuid}",
-  "precio_compra": 0.50,
-  "precio_venta": 1.00,
-  "stock": 50,
-  "stock_minimo": 10
-}
-```
-
-### Actualizar Producto con Categoría
-```bash
-PUT /api/products/{product_id}
-Content-Type: application/json
-
-{
-  "category_id": "{new_category_uuid}"
-}
-```
-
 ## 🧪 Ejecutar Migraciones y Seeders
 
 ```bash
@@ -102,28 +70,6 @@ php artisan migrate
 
 # O solo seeders
 php artisan db:seed
-```
-
-## 📊 Respuesta de Estadísticas
-
-```json
-GET /api/categories/stats
-
-{
-  "total": 8,
-  "activas": 8,
-  "categories": [
-    {
-      "id": "uuid-1",
-      "nombre": "Bebidas",
-      "descripcion": "Bebidas frías y calientes",
-      "activo": true,
-      "products_count": 5,
-      "created_at": "2026-04-06T20:41:00Z",
-      "updated_at": "2026-04-06T20:41:00Z"
-    }
-  ]
-}
 ```
 
 ## 🔑 Características Implementadas

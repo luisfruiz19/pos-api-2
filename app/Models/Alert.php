@@ -26,7 +26,7 @@ class Alert extends Model
 
     protected $casts = [
         'leido'      => 'boolean',
-        'created_at' => 'datetime',
+        'created_at' => 'datetime:Y-m-d\TH:i:s.u',
     ];
 
     // ─── Relaciones ───────────────────────────────────────────────

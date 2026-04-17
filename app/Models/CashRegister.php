@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
+use function Symfony\Component\Clock\now;
+
 class CashRegister extends Model
 {
     use HasFactory, HasUuids;
@@ -34,8 +36,8 @@ class CashRegister extends Model
         'monto_esperado'  => 'decimal:2',
         'dinero_contado'  => 'decimal:2',
         'diferencia'      => 'decimal:2',
-        'fecha_apertura'  => 'datetime',
-        'fecha_cierre'    => 'datetime',
+        'fecha_apertura'  => 'datetime:Y-m-d\TH:i:s.u',
+        'fecha_cierre'    => 'datetime:Y-m-d\TH:i:s.u',
     ];
 
     // ─── Relaciones ───────────────────────────────────────────────
@@ -82,7 +84,7 @@ class CashRegister extends Model
             'diferencia'      => $dineroContado - $montoEsperado,
             'estado'          => 'cerrada',
             'observacion'     => $observacion,
-            'fecha_cierre'    => Carbon::now(),
+            'fecha_cierre'    => now(),
         ]);
     }
 

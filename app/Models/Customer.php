@@ -24,8 +24,8 @@ class Customer extends Model
 
     protected $casts = [
         'saldo_deuda' => 'decimal:2',
-        'ultima_compra_at' => 'datetime',
-        'ultima_pago_at' => 'datetime',
+        'ultima_compra_at' => 'datetime:Y-m-d\TH:i:s.u',
+        'ultima_pago_at' => 'datetime:Y-m-d\TH:i:s.u',
     ];
 
     // ──── Relaciones ────────────────────────

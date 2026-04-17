@@ -23,7 +23,7 @@ class InventoryMovement extends Model
     ];
 
     protected $casts = [
-        'created_at' => 'datetime',
+        'created_at' => 'datetime:Y-m-d\TH:i:s.u',
     ];
 
     // ─── Relaciones ───────────────────────────────────────────────

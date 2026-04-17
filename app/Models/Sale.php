@@ -29,7 +29,7 @@ class Sale extends Model
     protected $casts = [
         'total'          => 'decimal:2',
         'ganancia_total' => 'decimal:2',
-        'created_at'     => 'datetime',
+        'created_at'     => 'datetime:Y-m-d\TH:i:s.u',
     ];
 
     protected $appends = [

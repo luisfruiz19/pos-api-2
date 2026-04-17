@@ -23,7 +23,7 @@ class CreditPayment extends Model
 
     protected $casts = [
         'monto' => 'decimal:2',
-        'created_at' => 'datetime',
+        'created_at' => 'datetime:Y-m-d\TH:i:s.u',
     ];
 
     // ──── Relaciones ────────────────────────
