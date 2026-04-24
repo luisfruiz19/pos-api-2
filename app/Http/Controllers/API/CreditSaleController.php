@@ -188,7 +188,8 @@ class CreditSaleController extends Controller
                 'monto' => $monto,
                 'metodo_pago' => $validated['metodo_pago'],
                 'observacion' => $validated['observacion'] ?? null,
-                'created_at' => now(),
+                // Zona horaria Lima, Perú (UTC-5)
+                'created_at' => now()->setTimezone('America/Lima'),
             ]);
 
             // 2. Procesar abono
